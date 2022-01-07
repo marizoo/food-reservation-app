@@ -1,24 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//create initial state variable here, usually an object
+// create initialvalue here
 const initialState = {
   value: [],
 };
 
-export const reservationSlice = createSlice({
-  name: "reservations",
+export const reservationsSlice = createSlice({
+  name: "reservationSlice",
   initialState,
   reducers: {
-    // add a bunch of our methods here, to update our state.
+    // a bunch of our states here
     addReservation: (state, action) => {
       state.value.push(action.payload);
-    },
-    removeReservation: (state, action) => {
-      state.value.splice(action.payload, 1);
     },
   },
 });
 
-export const { addReservation, removeReservation } = reservationSlice.actions;
-
-export default reservationSlice.reducer;
+export const { addReservation } = reservationsSlice.actions;
+export default reservationsSlice.reducer;
